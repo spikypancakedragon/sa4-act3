@@ -9,5 +9,11 @@ while guess != 'q' and num_guesses > 0:
         break
     else:
         num_guesses -= 1
-        guess = int(input(f"Sorry, that's not correct. You have {num_guesses} guesses left. Try again? "))
+        if guess < number:
+            print("Sorry! Your guess was too low.")
+        else:
+            print("Sorry! Your guess was too high.")
+
+        guess = int(input("You have {num_guesses} guesses left. Try again? "))
+
 print(f"The number was {number}. Goodbye!")
